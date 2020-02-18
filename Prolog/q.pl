@@ -1,12 +1,8 @@
 go:- 
 
-	 
-invented(edison,lightbulb).
-invented(colmeraurer,prolog).
-iq(einstein,210).
-iq(edison,160).
-iq(waldorf,90).
+n(X,2).
+n(adam,0):-!.	
+n(eve,0):-!.
 
-smart_invention(Invention):-invented(Person,Invention),iq(Person,_).
 
 :-initialization(go).
