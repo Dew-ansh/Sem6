@@ -2,16 +2,13 @@ go:-
 	write('Enter List :'),nl,
 	createList(L),
     write(L),nl,nl,
-    pal(L),
-    write('List is Palindrome');
-    write('List is not Palindrome').     
+    sumList(L, S),
+    write('Sum: '),
+    write(S).     
 
-    rev(L, R):-my_rev(L,[],R).
-
-    my_rev([], A, A):-!.
-    my_rev([H|T], A, R):-   my_rev(T, [H|A], R).
-
-    pal(L):- rev(L, L).
+    sumList([], 0):- !.
+    sumList([H|T], S):- sumList(T, S1),
+                        S  is H+S1.
 
     enterEl(X) :-   write('Enter Element :'),
                     read(X).

@@ -4,7 +4,7 @@ go:-
 	fact(X1,R),nl,
 	write('Factorial is : '),write(R).
 
-fact(0,1).
+fact(0,1):- !.
 fact(A,R):- A>0 ,
 			A1 is A-1,
 			fact(A1,R1),

@@ -2,16 +2,15 @@ go:-
 	write('Enter List :'),nl,
 	createList(L),
     write(L),nl,nl,
-    pal(L),
-    write('List is Palindrome');
-    write('List is not Palindrome').     
+    even(L),
+    write('List has Even Length');
+    odd(L),
+    write('List has Odd Length').     
 
-    rev(L, R):-my_rev(L,[],R).
+    even([]):- !.
+    even([_|T]):-   odd(T).
 
-    my_rev([], A, A):-!.
-    my_rev([H|T], A, R):-   my_rev(T, [H|A], R).
-
-    pal(L):- rev(L, L).
+    odd([_|T]):-    even(T).
 
     enterEl(X) :-   write('Enter Element :'),
                     read(X).
