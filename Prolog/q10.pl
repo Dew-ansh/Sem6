@@ -14,7 +14,7 @@ go:-
     enterEl(X) :-   write('Enter Element :'),
                     read(X).
 
-    createList(L) :- enterEl(X), 
+    createList(L) :-enterEl(X), 
                     createList(X, L).
     
     createList(-1, []) :-   !.
@@ -24,8 +24,8 @@ go:-
 
     printList([]) :-    !.
     
-    printList([H|T]) :-    write(' '),
-                            write(H),
-                            printList(T).
+    printList([H|T]) :- write(' '),
+                        write(H),
+                        printList(T).
 
 :-initialization(go).
