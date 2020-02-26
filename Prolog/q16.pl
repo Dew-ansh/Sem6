@@ -5,7 +5,8 @@ go:-
 	write('Enter position of element :'),
 	read(N),nl,nl,
     length_of(L,X),
-    X > N,
+    N > 0,
+    X >= N,
     nElement(N, L, R),
     write(N),
     write('th element of list: '),
@@ -18,8 +19,7 @@ go:-
                         len(T, K, X).
 
     nElement(1, [H|_], H) :- !.
-    nElement(N, [_|T], R) :-    N > 1,   
-                                N1 is N-1,
+    nElement(N, [_|T], R) :-    N1 is N-1,
                                 nElement(N1, T, R).
 
     enterEl(X) :-   write('Enter Element :'),

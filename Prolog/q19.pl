@@ -2,13 +2,15 @@ go:-
 	write('Enter a List :'),nl,
 	createList(L),
     write(L),nl,
-	write('Enter position of element to be delete:'),
+    write('Enter Element to be inserted: '),
+    read(I),nl,
+	write('Enter position :'),
 	read(N),nl,nl,
     length_of(L,X),
     N > 0,
-    X >= N,
-    delElement(N, L, R),
-    write('List: '),
+    X+1 >= N,
+    insertEle(I, N, L, R),
+    write('Resultant List: '),
     write(R);
     write('Enter Valid Arguments').
 
@@ -17,14 +19,11 @@ go:-
     len([_|T], A, X):-  K is A+1,
                         len(T, K, X).
 
-    conc([], L, L):-!.
-    conc(L, [], L):-!.
-    conc([H|T1], L2, [H|T2]):-  conc(T1, L2, T2).
+    
+    insertEle(I, 1, L, [I|L]):- !.
+    insertEle(I, N, [H|T], [H|R]):- N1 is N-1,
+                                insertEle(I, N1, T, R).
 
-    delElement(1, [_|T], T) :- !.
-    delElement(N, [H|T], R) :-  N1 is N-1,
-                                delElement(N1, T, R1),
-                                conc([H], R1, R).
 
     enterEl(X) :-   write('Enter Element :'),
                     read(X).

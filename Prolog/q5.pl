@@ -9,7 +9,7 @@ go:-
 
 gcd(X, 0, X):- !.
 gcd(X1, X2, R):-    N is mod(X1, X2),
-                    gcd(X2, N, R1),
-                    R is R1.
+                    gcd(X2, N, R).
+                    
 
 :-initialization(go).
