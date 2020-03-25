@@ -1,5 +1,5 @@
 go:-	
-	w0rite('Enter ordered List1 :'),nl,
+	write('Enter ordered List1 :'),nl,
 	createList(L1),
     write(L1),nl,nl,
     write('Enter ordered list2 :'),nl,
