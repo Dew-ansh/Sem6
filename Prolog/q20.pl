@@ -9,6 +9,12 @@ go:-
     write('S is a Sublist of L : ');
     write('S is not a Sublist of L'). 
 
+    
+    conc([], L, L):-!.
+    conc(L, [], L):-!.
+    conc([H|T1], L2, [H|T2]):-  conc(T1, L2, T2).       
+
+
     subList(S, L):- conc(L1, L2, L),
                     conc(S, L3, L2).
 
